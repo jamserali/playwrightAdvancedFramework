@@ -35,6 +35,7 @@ module.exports = defineConfig({
     // launchOptions:{
     // args:['—start-maximized']
     // }
+    reporter: [['html', { outputFolder: 'result', open: 'never' }]]
 
   },
 
