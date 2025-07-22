@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import GoibiboSignUpPage from '../../pages/goibiboSignupPage';
+import GoibiboSignUpPage from '../pages/goibiboSignupPage';
 import { parse } from 'csv-parse/sync';
 import fs from 'fs';
 import path from 'path';

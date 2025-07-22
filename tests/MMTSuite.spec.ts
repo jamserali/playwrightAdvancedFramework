@@ -1,4 +1,4 @@
-import {test} from '../../fixture/testFixture'
+import {test} from '../fixture/testFixture'
 test("Fixture test-MMT ",async({page,homePage})=>{
     console.log("My  fixture is running...")
     await homePage.gotoURL()

@@ -1,26 +1,13 @@
 import {test , expect} from '@playwright/test'
 import moment from "moment";
+import path from 'path';
+import { readExcel } from '../utils/excelHelper';
 
-import testdata from '../../test-data/qa/testdata.json';
+const filePath = path.join(__dirname,'../../test-data/qa/testdata.csv');
+const records = readExcel(filePath)
 
-type testData= {
-    "testDataSet1":{
-        "date1":string,
-        "date2":string
-    },
-    "testDataSet2":{
-        "date1":string,
-        "date2":string
-    }
-
-}
-
-const test_data = testdata as  testData;
-
-
-    async function selectDate(page,date: number, dateToSelect: string) {
+async function selectDate(page,date: number, dateToSelect: string) {
         await page.click("//input[@placeholder='Start date']")
-
         const mmYY = page.locator("(//table[@class='table-condensed']//th[@class='datepicker-switch'])[1]");
         const prev = page.locator("(//table[@class='table-condensed']//th[@class='prev'])[1]");
         const next = page.locator("(//table[@class='table-condensed']//th[@class='next'])[1]");
@@ -38,24 +25,21 @@ const test_data = testdata as  testData;
         await page.click(`//td[@class='day'][text()='${date}']`);
     }
 
-for(let data in test_data){
-    const date = test_data[data as keyof testData]
 
-test(`Calendar demo using moment using JSON testdata ${date.date1}`, async ({ page }) => {
+for(let record of records){
+    
+test(`Calendar demo using Excel data driven : ${record.skill1}`, async ({ page }) => {
 
     await page.goto(`${process.env.Browser_URL}`);
-
-    await selectDate(page,12, `${date.date1}`);
+    await selectDate(page,12, `${record.skill1}`);
     await page.reload();
-    await selectDate(page,5, `${date.date1}`);
+    await selectDate(page,5, `${record.skill1}`);
     await page.reload();
-    await selectDate(page,2, `${date.date1}`);
-
+    await selectDate(page,2, `${record.skill1}`);
+    
 })
-
+    
 }
-
-
 
 
 
