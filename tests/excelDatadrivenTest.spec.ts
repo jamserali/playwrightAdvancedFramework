@@ -3,7 +3,7 @@ import moment from "moment";
 import path from 'path';
 import { readExcel } from '../utils/excelHelper';
 
-const filePath = path.join(__dirname,'../../test-data/qa/testdata.csv');
+const filePath = path.join(__dirname,'../test-data/qa/testdata.csv');
 const records = readExcel(filePath)
 
 async function selectDate(page,date: number, dateToSelect: string) {

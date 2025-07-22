@@ -9,7 +9,7 @@ type testRecord ={
     skill2:string
 }
 
-const records= parse(fs.readFileSync(path.join(__dirname,'../../test-data/qa/testdata.csv')),{
+const records= parse(fs.readFileSync(path.join(__dirname,'../test-data/qa/testdata.csv')),{
     columns:true,
     skipEmptyLines:true
 }) as testRecord[];

@@ -11,7 +11,7 @@ type Data = {
 };
 
 const records = parse(
-  fs.readFileSync(path.join(__dirname, '../../test-data/dev/userdata.csv')),
+  fs.readFileSync(path.join(__dirname, '../test-data/dev/userdata.csv')),
   {
     columns: true,
     skipEmptyLines: true,
