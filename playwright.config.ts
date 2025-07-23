@@ -35,6 +35,8 @@ module.exports = defineConfig({
     headless:false,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+
      
 
 
@@ -86,7 +88,7 @@ module.exports = defineConfig({
     // },
   ],
 
-  
+
   /* Run your local dev server before starting the tests */
   // webServer: {
   //   command: 'npm run start',
