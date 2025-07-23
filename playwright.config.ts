@@ -24,7 +24,10 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html', { outputFolder: 'result', open: 'never' }],
+              ['allure-playwright'],
+              ['junit',{outputFolder:'playwright-report\junit-test-report.xml'}],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -35,10 +38,7 @@ module.exports = defineConfig({
     // launchOptions:{
     // args:['—start-maximized']
     // }
-    reporter: [['html', { outputFolder: 'result', open: 'never' }],
-              ['allure-playwright'],
-              ['junit',{outputFile:'junit-test-report.xml'}],
-  ]
+    
 
   },
 
