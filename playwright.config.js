@@ -35,7 +35,10 @@ module.exports = defineConfig({
     // launchOptions:{
     // args:['—start-maximized']
     // }
-    reporter: [['html', { outputFolder: 'result', open: 'never' }]]
+    reporter: [['html', { outputFolder: 'result', open: 'never' }],
+              ['allure-playwright'],
+              ['junit',{outputFile:'junit-test-report.xml'}],
+  ]
 
   },
 
