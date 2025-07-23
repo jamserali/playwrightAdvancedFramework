@@ -1,0 +1,12 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.117752000000001">
+<testsuite name="MMTSuite.spec.ts" timestamp="2025-07-23T06:27:34.041Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.385" errors="0">
+<testcase name="Fixture test-MMT " classname="MMTSuite.spec.ts" time="7.385">
+<system-out>
+<![CDATA[Global before is running...
+My  fixture is running...
+Global after each is running...
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

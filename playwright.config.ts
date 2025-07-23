@@ -27,7 +27,7 @@ module.exports = defineConfig({
   reporter: [['html', { outputFolder: 'result', open: 'never' }],
               ['allure-playwright'],
               ['list'],
-              ['junit', { outputFile: 'playwright-report\junit-test-report.xml' }]
+              ['junit', { outputFile: 'junit-test-report.xml' }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
