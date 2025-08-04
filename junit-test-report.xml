@@ -1,10 +1,435 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.117752000000001">
-<testsuite name="MMTSuite.spec.ts" timestamp="2025-07-23T06:27:34.041Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.385" errors="0">
-<testcase name="Fixture test-MMT " classname="MMTSuite.spec.ts" time="7.385">
+<testsuites id="" name="" tests="20" failures="9" skipped="0" errors="0" time="92.385744">
+<testsuite name="csvDatadrivenTest.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="chromium" tests="2" failures="1" skipped="0" time="48.736" errors="0">
+<testcase name="Calendar demo using CSV data driven : December 2017" classname="csvDatadrivenTest.spec.ts" time="30.232">
+<failure message="csvDatadrivenTest.spec.ts:43:5 Calendar demo using CSV data driven : December 2017" type="FAILURE">
+<![CDATA[  [chromium] › csvDatadrivenTest.spec.ts:43:5 › Calendar demo using CSV data driven : December 2017 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.textContent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('xpath=(//table[@class=\'table-condensed\']//th[@class=\'datepicker-switch\'])[1]')
+
+
+      28 |         const thisMonth = moment(dateToSelect, "MMMM YYYY").isBefore();
+      29 |         console.log("this month? " + thisMonth);
+    > 30 |         while (await mmYY.textContent() != dateToSelect) {
+         |                           ^
+      31 |             if (thisMonth) {
+      32 |                 await prev.click();
+      33 |             } else {
+
+        at selectDate (D:\Automation\Playwrite_Automation\tests\csvDatadrivenTest.spec.ts:30:27)
+        at D:\Automation\Playwrite_Automation\tests\csvDatadrivenTest.spec.ts:51:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\csvDatadrivenTest-Calendar-9cdce-V-data-driven-December-2017-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+
+[[ATTACHMENT|test-results\csvDatadrivenTest-Calendar-9cdce-V-data-driven-December-2017-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Calendar demo using CSV data driven : July 2022" classname="csvDatadrivenTest.spec.ts" time="18.504">
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="excelDatadrivenTest.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="chromium" tests="2" failures="1" skipped="0" time="49.042" errors="0">
+<testcase name="Calendar demo using Excel data driven : December 2017" classname="excelDatadrivenTest.spec.ts" time="30.237">
+<failure message="excelDatadrivenTest.spec.ts:31:5 Calendar demo using Excel data driven : December 2017" type="FAILURE">
+<![CDATA[  [chromium] › excelDatadrivenTest.spec.ts:31:5 › Calendar demo using Excel data driven : December 2017 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('xpath=(//table[@class=\'table-condensed\']//th[@class=\'prev\'])[1]')
+      -   locator resolved to <th class="prev">«</th>
+      - attempting click action
+      -   waiting for element to be visible, enabled and stable
+      -   element is visible, enabled and stable
+      -   scrolling into view if needed
+      -   done scrolling
+      -   performing click action
+
+
+      18 |         while (await mmYY.textContent() != dateToSelect) {
+      19 |             if (thisMonth) {
+    > 20 |                 await prev.click();
+         |                            ^
+      21 |             } else {
+      22 |                 await next.click();
+      23 |             }
+
+        at selectDate (D:\Automation\Playwrite_Automation\tests\excelDatadrivenTest.spec.ts:20:28)
+        at D:\Automation\Playwrite_Automation\tests\excelDatadrivenTest.spec.ts:38:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\excelDatadrivenTest-Calend-e6d7e-l-data-driven-December-2017-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+
+[[ATTACHMENT|test-results\excelDatadrivenTest-Calend-e6d7e-l-data-driven-December-2017-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Calendar demo using Excel data driven : July 2022" classname="excelDatadrivenTest.spec.ts" time="18.805">
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="goibiboSignup.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="chromium" tests="3" failures="0" skipped="0" time="17.623" errors="0">
+<testcase name="Create new user in Goibibo__ 0" classname="goibiboSignup.spec.ts" time="7.008">
+</testcase>
+<testcase name="Create new user in Goibibo__ 1" classname="goibiboSignup.spec.ts" time="7.311">
+</testcase>
+<testcase name="Create new user in Goibibo__ 2" classname="goibiboSignup.spec.ts" time="3.304">
+</testcase>
+</testsuite>
+<testsuite name="jsonDatadrivenTest.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="chromium" tests="2" failures="1" skipped="0" time="44.877" errors="0">
+<testcase name="Calendar demo using moment using JSON testdata December 2017" classname="jsonDatadrivenTest.spec.ts" time="30.295">
+<failure message="jsonDatadrivenTest.spec.ts:44:5 Calendar demo using moment using JSON testdata December 2017" type="FAILURE">
+<![CDATA[  [chromium] › jsonDatadrivenTest.spec.ts:44:5 › Calendar demo using moment using JSON testdata December 2017 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('xpath=(//table[@class=\'table-condensed\']//th[@class=\'prev\'])[1]')
+      -   locator resolved to <th class="prev">«</th>
+      - attempting click action
+      -   waiting for element to be visible, enabled and stable
+      -   element is visible, enabled and stable
+      -   scrolling into view if needed
+      -   done scrolling
+      -   performing click action
+
+
+      31 |         while (await mmYY.textContent() != dateToSelect) {
+      32 |             if (thisMonth) {
+    > 33 |                 await prev.click();
+         |                            ^
+      34 |             } else {
+      35 |                 await next.click();
+      36 |             }
+
+        at selectDate (D:\Automation\Playwrite_Automation\tests\jsonDatadrivenTest.spec.ts:33:28)
+        at D:\Automation\Playwrite_Automation\tests\jsonDatadrivenTest.spec.ts:52:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\jsonDatadrivenTest-Calenda-1e832-JSON-testdata-December-2017-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+
+[[ATTACHMENT|test-results\jsonDatadrivenTest-Calenda-1e832-JSON-testdata-December-2017-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Calendar demo using moment using JSON testdata July 2022" classname="jsonDatadrivenTest.spec.ts" time="14.582">
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="MMTSuite.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="chromium" tests="1" failures="1" skipped="0" time="0.548" errors="0">
+<testcase name="Fixture test-MMT " classname="MMTSuite.spec.ts" time="0.548">
+<failure message="MMTSuite.spec.ts:2:5 Fixture test-MMT " type="FAILURE">
+<![CDATA[  [chromium] › MMTSuite.spec.ts:2:5 › Fixture test-MMT  ────────────────────────────────────────────
+
+    Error: page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.makemytrip.com/
+    Call log:
+      - navigating to "https://www.makemytrip.com/", waiting until "load"
+
+
+       at ..\pages\homePage.ts:45
+
+      43 |
+      44 |     async gotoURL(){
+    > 45 |         await this.page.goto(`${process.env.MMT_URL}`)
+         |                         ^
+      46 |     }
+      47 |     async closeModel(){
+      48 |         await this.modalCloseButton.click()
+
+        at HomePage.gotoURL (D:\Automation\Playwrite_Automation\pages\homePage.ts:45:25)
+        at D:\Automation\Playwrite_Automation\tests\MMTSuite.spec.ts:4:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\MMTSuite-Fixture-test-MMT--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 <system-out>
 <![CDATA[Global before is running...
 My  fixture is running...
 Global after each is running...
+
+[[ATTACHMENT|test-results\MMTSuite-Fixture-test-MMT--chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="csvDatadrivenTest.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="firefox" tests="2" failures="2" skipped="0" time="60.509" errors="0">
+<testcase name="Calendar demo using CSV data driven : December 2017" classname="csvDatadrivenTest.spec.ts" time="30.235">
+<failure message="csvDatadrivenTest.spec.ts:43:5 Calendar demo using CSV data driven : December 2017" type="FAILURE">
+<![CDATA[  [firefox] › csvDatadrivenTest.spec.ts:43:5 › Calendar demo using CSV data driven : December 2017 ─
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('xpath=(//table[@class=\'table-condensed\']//th[@class=\'prev\'])[1]')
+      -   locator resolved to <th class="prev">«</th>
+      - attempting click action
+      -   waiting for element to be visible, enabled and stable
+      -   element is visible, enabled and stable
+      -   scrolling into view if needed
+      -   done scrolling
+
+
+      30 |         while (await mmYY.textContent() != dateToSelect) {
+      31 |             if (thisMonth) {
+    > 32 |                 await prev.click();
+         |                            ^
+      33 |             } else {
+      34 |                 await next.click();
+      35 |             }
+
+        at selectDate (D:\Automation\Playwrite_Automation\tests\csvDatadrivenTest.spec.ts:32:28)
+        at D:\Automation\Playwrite_Automation\tests\csvDatadrivenTest.spec.ts:49:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\csvDatadrivenTest-Calendar-9cdce-V-data-driven-December-2017-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[this month? true
+this month? true
+
+[[ATTACHMENT|test-results\csvDatadrivenTest-Calendar-9cdce-V-data-driven-December-2017-firefox\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Calendar demo using CSV data driven : July 2022" classname="csvDatadrivenTest.spec.ts" time="30.274">
+<failure message="csvDatadrivenTest.spec.ts:43:5 Calendar demo using CSV data driven : July 2022" type="FAILURE">
+<![CDATA[  [firefox] › csvDatadrivenTest.spec.ts:43:5 › Calendar demo using CSV data driven : July 2022 ─────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('xpath=(//table[@class=\'table-condensed\']//th[@class=\'prev\'])[1]')
+      -   locator resolved to <th class="prev">«</th>
+      - attempting click action
+      -   waiting for element to be visible, enabled and stable
+      -   element is visible, enabled and stable
+      -   scrolling into view if needed
+      -   done scrolling
+
+
+      30 |         while (await mmYY.textContent() != dateToSelect) {
+      31 |             if (thisMonth) {
+    > 32 |                 await prev.click();
+         |                            ^
+      33 |             } else {
+      34 |                 await next.click();
+      35 |             }
+
+        at selectDate (D:\Automation\Playwrite_Automation\tests\csvDatadrivenTest.spec.ts:32:28)
+        at D:\Automation\Playwrite_Automation\tests\csvDatadrivenTest.spec.ts:51:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\csvDatadrivenTest-Calendar-34cef-g-CSV-data-driven-July-2022-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+
+[[ATTACHMENT|test-results\csvDatadrivenTest-Calendar-34cef-g-CSV-data-driven-July-2022-firefox\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="excelDatadrivenTest.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="firefox" tests="2" failures="1" skipped="0" time="58.857" errors="0">
+<testcase name="Calendar demo using Excel data driven : December 2017" classname="excelDatadrivenTest.spec.ts" time="30.234">
+<failure message="excelDatadrivenTest.spec.ts:31:5 Calendar demo using Excel data driven : December 2017" type="FAILURE">
+<![CDATA[  [firefox] › excelDatadrivenTest.spec.ts:31:5 › Calendar demo using Excel data driven : December 2017 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('xpath=(//table[@class=\'table-condensed\']//th[@class=\'prev\'])[1]')
+      -   locator resolved to <th class="prev">«</th>
+      - attempting click action
+      -   waiting for element to be visible, enabled and stable
+      -   element is visible, enabled and stable
+      -   scrolling into view if needed
+      -   done scrolling
+      -   performing click action
+
+
+      18 |         while (await mmYY.textContent() != dateToSelect) {
+      19 |             if (thisMonth) {
+    > 20 |                 await prev.click();
+         |                            ^
+      21 |             } else {
+      22 |                 await next.click();
+      23 |             }
+
+        at selectDate (D:\Automation\Playwrite_Automation\tests\excelDatadrivenTest.spec.ts:20:28)
+        at D:\Automation\Playwrite_Automation\tests\excelDatadrivenTest.spec.ts:36:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\excelDatadrivenTest-Calend-e6d7e-l-data-driven-December-2017-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[this month? true
+this month? true
+
+[[ATTACHMENT|test-results\excelDatadrivenTest-Calend-e6d7e-l-data-driven-December-2017-firefox\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Calendar demo using Excel data driven : July 2022" classname="excelDatadrivenTest.spec.ts" time="28.623">
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="goibiboSignup.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="firefox" tests="3" failures="0" skipped="0" time="22.712" errors="0">
+<testcase name="Create new user in Goibibo__ 0" classname="goibiboSignup.spec.ts" time="9.335">
+</testcase>
+<testcase name="Create new user in Goibibo__ 1" classname="goibiboSignup.spec.ts" time="4.806">
+</testcase>
+<testcase name="Create new user in Goibibo__ 2" classname="goibiboSignup.spec.ts" time="8.571">
+</testcase>
+</testsuite>
+<testsuite name="jsonDatadrivenTest.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="firefox" tests="2" failures="1" skipped="0" time="49.728" errors="0">
+<testcase name="Calendar demo using moment using JSON testdata December 2017" classname="jsonDatadrivenTest.spec.ts" time="30.168">
+<failure message="jsonDatadrivenTest.spec.ts:44:5 Calendar demo using moment using JSON testdata December 2017" type="FAILURE">
+<![CDATA[  [firefox] › jsonDatadrivenTest.spec.ts:44:5 › Calendar demo using moment using JSON testdata December 2017 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('xpath=(//table[@class=\'table-condensed\']//th[@class=\'prev\'])[1]')
+      -   locator resolved to <th class="prev">«</th>
+      - attempting click action
+      -   waiting for element to be visible, enabled and stable
+      -   element is visible, enabled and stable
+      -   scrolling into view if needed
+      -   done scrolling
+
+
+      31 |         while (await mmYY.textContent() != dateToSelect) {
+      32 |             if (thisMonth) {
+    > 33 |                 await prev.click();
+         |                            ^
+      34 |             } else {
+      35 |                 await next.click();
+      36 |             }
+
+        at selectDate (D:\Automation\Playwrite_Automation\tests\jsonDatadrivenTest.spec.ts:33:28)
+        at D:\Automation\Playwrite_Automation\tests\jsonDatadrivenTest.spec.ts:52:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\jsonDatadrivenTest-Calenda-1e832-JSON-testdata-December-2017-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+
+[[ATTACHMENT|test-results\jsonDatadrivenTest-Calenda-1e832-JSON-testdata-December-2017-firefox\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Calendar demo using moment using JSON testdata July 2022" classname="jsonDatadrivenTest.spec.ts" time="19.56">
+<system-out>
+<![CDATA[this month? true
+this month? true
+this month? true
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="MMTSuite.spec.ts" timestamp="2025-08-03T16:45:57.127Z" hostname="firefox" tests="1" failures="1" skipped="0" time="30.342" errors="0">
+<testcase name="Fixture test-MMT " classname="MMTSuite.spec.ts" time="30.342">
+<failure message="MMTSuite.spec.ts:2:5 Fixture test-MMT " type="FAILURE">
+<![CDATA[  [firefox] › MMTSuite.spec.ts:2:5 › Fixture test-MMT  ─────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('//*[@class=\'rmsGst__row\']//div//p[text()=\'Room\']//..//..//div[2]')
+
+
+       at ..\pages\homePage.ts:92
+
+      90 |
+      91 |     async selectRoomAndGuests(noOfRoom:number,child:number=0){
+    > 92 |         await this.roomCount.click()
+         |                              ^
+      93 |         // room and adults
+      94 |         const quantities = await this.guestSelectList.all()
+      95 |         for(let room of quantities){
+
+        at HomePage.selectRoomAndGuests (D:\Automation\Playwrite_Automation\pages\homePage.ts:92:30)
+        at D:\Automation\Playwrite_Automation\tests\MMTSuite.spec.ts:11:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\MMTSuite-Fixture-test-MMT--firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[Global before is running...
+My  fixture is running...
+Global after each is running...
+
+[[ATTACHMENT|test-results\MMTSuite-Fixture-test-MMT--firefox\test-failed-1.png]]
 ]]>
 </system-out>
 </testcase>
